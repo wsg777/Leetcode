@@ -19,42 +19,22 @@ public class P002 {
 
 
 	public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-		ListNode listNode = new ListNode(l1.val + l2.val);
+		int value = 0;
+		int carry = 0;
+		ListNode listNode = new ListNode(0);
 		ListNode cur = listNode;
-		l1 = l1.next;
-		l2 = l2.next;
 		while (l1 != null || l2 != null) {
-			if (l1 == null) {
-				l1 = new ListNode(0);
-			}
-			if (l2 == null) {
-				l2 = new ListNode(0);
-			}
-			cur.next = new ListNode(l1.val + l2.val);
+			l1 = l1 == null ? new ListNode(0) : l1;
+			l2 = l2 == null ? new ListNode(0) : l2;
+			value = l1.val + l2.val + carry;
+			carry = value >= 10 ? 1 : 0;
+			cur.next = new ListNode(value>= 10 ? value - 10 : value);
 			cur = cur.next;
 			l1 = l1.next;
 			l2 = l2.next;
 		}
-
-		cur = listNode;
-		int carry = 0;
-		while (true) {
-			cur.val += carry;
-			carry = 0;
-			if (cur.val >= 10) {
-				cur.val -= 10;
-				carry++;
-			}
-			if (cur.next == null) {
-				if (carry == 1) {
-					cur.next = new ListNode(carry);
-				}
-				break;
-			}
-			cur = cur.next;
-		}
-
-		return listNode;
+		cur.next = carry == 0 ? null : new ListNode(1);
+		return listNode.next;
 	}
 }
 
