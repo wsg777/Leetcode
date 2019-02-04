@@ -7,8 +7,6 @@
 public class P013 {
 	public int romanToInt(String s) {
 
-		// todo
-
 		int i = 0;
 		if (s.startsWith("M")) {
 			s = s.substring(1, s.length());
