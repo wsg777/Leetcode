@@ -1,3 +1,5 @@
+package leetcode;
+
 /**
  * Palindrome Number
  *

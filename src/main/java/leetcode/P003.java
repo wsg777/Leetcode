@@ -1,3 +1,5 @@
+package leetcode;
+
 /**
  * Longest Substring Without Repeating Characters
  *
@@ -36,7 +38,7 @@ public class P003 {
 
 
 	public static void main(String[] args) {
-//		System.out.println(new P003().whetherRepeat(" "));
+//		System.out.println(new leetcode.P003().whetherRepeat(" "));
 		String a = "ababc";
 		System.out.println(new P003().lengthOfLongestSubstring(a));
 	}

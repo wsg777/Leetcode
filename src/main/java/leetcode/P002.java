@@ -1,3 +1,5 @@
+package leetcode;
+
 /**
  * Add Two Numbers
  *
@@ -35,14 +37,5 @@ public class P002 {
 		}
 		cur.next = carry == 0 ? null : new ListNode(1);
 		return listNode.next;
-	}
-}
-
-class ListNode {
-	int val;
-	ListNode next;
-
-	public ListNode(int x) {
-		val = x;
 	}
 }

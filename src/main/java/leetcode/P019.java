@@ -1,4 +1,8 @@
+package leetcode;
+
 /**
+ * Remove Nth Node From End of List
+ *
  * @Author 王少刚
  * @Date 2019/2/4 20:00
  */
@@ -14,16 +18,16 @@ public class P019 {
 		int target = nodes - n + 1;
 		// 重置cur
 		cur = head;
-		// 移到目标前一位
+		// 移到目标父节点
 		for (int i = 1; i < target - 1; i++) {
 			cur = cur.next;
 		}
-		// 如果目标是第一位
+		// 如果目标是头节点
 		if (n == nodes) {
 			return head.next;
 		}
 		if (n == 1) {
-			// 如果目标是最后一位
+			// 如果目标是尾节点
 			cur.next = null;
 		} else {
 			// 一般情况
@@ -36,9 +40,9 @@ public class P019 {
 		ListNode listNode = new ListNode(1);
 		ListNode cur = listNode;
 		cur = cur.next = new ListNode(2);
-//		cur = cur.next = new ListNode(3);
-//		cur = cur.next = new ListNode(4);
-//		cur = cur.next = new ListNode(5);
+//		cur = cur.next = new leetcode.ListNode(3);
+//		cur = cur.next = new leetcode.ListNode(4);
+//		cur = cur.next = new leetcode.ListNode(5);
 
 		ListNode listNode1 = new P019().removeNthFromEnd(listNode, 2);
 		System.out.println(listNode1.val);

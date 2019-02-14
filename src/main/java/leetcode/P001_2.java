@@ -1,3 +1,5 @@
+package leetcode;
+
 /**
  * @Author 王少刚
  * @Date 2019/2/2 19:48

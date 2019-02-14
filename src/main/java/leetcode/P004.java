@@ -1,3 +1,5 @@
+package leetcode;
+
 /**
  * Median of Two Sorted Arrays
  *
